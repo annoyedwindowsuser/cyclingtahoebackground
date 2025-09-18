@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Time-Based Image</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: #000;
+      text-align: center;
+    }
+    img {
+      width: 100%;
+      height: 100vh;
+      object-fit: cover;
+    }
+  </style>
+</head>
+<body>
+  <img id="timeImage" src="" alt="Time-based image" />
+
+  <script>
+    function getTimeBasedImage() {
+      const now = new Date();
+      const hour = now.getHours();
+      const minute = now.getMinutes();
+      const time = hour * 60 + minute; // time in minutes since midnight
+
+      let imageName;
+
+      if (time >= 360 && time < 630) { // 6:00 AM to 10:29 AM
+        imageName = "26-Tahoe-Beach-Dawn.png";
+      } else if (time >= 630 && time < 990) { // 10:30 AM to 4:29 PM
+        imageName = "26-Tahoe-Beach-Day.png";
+      } else if (time >= 990 && time < 1110) { // 4:30 PM to 6:29 PM
+        imageName = "26-Tahoe-Beach-Dusk.png";
+      } else {
+        imageName = "26-Tahoe-Beach-Night.png";
+      }
+
+      return imageName;
+    }
+
+    const imgElement = document.getElementById("timeImage");
+    imgElement.src = getTimeBasedImage();
+  </script>
+</body>
+</html>
