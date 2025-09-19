@@ -22,9 +22,8 @@
   <img id="timeImage" src="" alt="Time-based image" />
 
   <script>
-    setTimeout(liveupdate, 1);
-    setInterval(liveupdate, 60000);
-    function liveupdate() {
+    setTimeout(getTimeBasedImage, 0);
+    setInterval(getTimeBasedImage, 60000);
     function getTimeBasedImage() {
       const now = new Date();
       const hour = now.getHours();
@@ -44,7 +43,6 @@
       }
 
       return imageName;
-    }
     }
 
     const imgElement = document.getElementById("timeImage");
