@@ -22,13 +22,14 @@
   <img id="timeImage" src="" alt="Time-based image" />
 
   <script>
-    setInterval(getTimeBasedImage, 120000);
+    setInterval(imageupdate, 120000);
+    function imageupdate() {
     function getTimeBasedImage() {
       const now = new Date();
       const hour = now.getHours();
       const minute = now.getMinutes();
       const time = hour * 60 + minute; // time in minutes since midnight
-    }
+    }}
       let imageName;
 
       if (time >= 360 && time < 630) { // 6:00 AM to 10:29 AM
