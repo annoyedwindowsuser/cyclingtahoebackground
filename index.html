@@ -22,8 +22,8 @@
   <img id="timeImage" src="" alt="Time-based image" />
 
   <script>
+    setInterval(getTimeBasedImage, 120000);
     function getTimeBasedImage() {
-    function updateContent() {
       const now = new Date();
       const hour = now.getHours();
       const minute = now.getMinutes();
@@ -40,12 +40,10 @@
       } else {
         imageName = "26-Tahoe-Beach-Night.png";
       }
-      setInterval(updateContent, 120000);
 
       return imageName;
     }
 
-    updateContent();
     const imgElement = document.getElementById("timeImage");
     imgElement.src = getTimeBasedImage();
   </script>
