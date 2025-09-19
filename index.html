@@ -23,13 +23,13 @@
 
   <script>
     function getTimeBasedImage() {
+    setInterval(updateContent, 120000);
+    updateContent();
     function updateContent() {
       const now = new Date();
       const hour = now.getHours();
       const minute = now.getMinutes();
       const time = hour * 60 + minute; // time in minutes since midnight
-      setInterval(updateContent, 120000);
-      updateContent();
     }
       let imageName;
 
