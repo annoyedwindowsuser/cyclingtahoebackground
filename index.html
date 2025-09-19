@@ -23,8 +23,6 @@
 
   <script>
     function getTimeBasedImage() {
-    setInterval(updateContent, 120000);
-    updateContent();
     function updateContent() {
       const now = new Date();
       const hour = now.getHours();
@@ -42,10 +40,12 @@
       } else {
         imageName = "26-Tahoe-Beach-Night.png";
       }
+      setInterval(updateContent, 120000);
 
       return imageName;
     }
 
+    updateContent();
     const imgElement = document.getElementById("timeImage");
     imgElement.src = getTimeBasedImage();
   </script>
